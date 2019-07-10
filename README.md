@@ -28,12 +28,15 @@ Para a realização desse trabalho, a dupla utilizou:
 Aqui a dupla descreverá as etapas necessárias para a implementação do circuito:
 1. Conecte o LED à _protoboard_, sabendo que a perna maior se refere à alimentação e a outra se refere ao aterramento;
 1. conecte o resistor ligando a linha da _protoboard_ em que está o aterramento do LED a outra linha qualquer;
-1. conecte dois _jumpers_ à _protoboard_, um à saída do resistor e o outro à alimentação do LED. O primeiro deve ser ligado ao aterramento da _protoboard_, o segundo deve ser ligado ao pino 11 da placa Arduino;
+1. conecte dois _jumpers_ à _protoboard_, um à saída do resistor e o outro à alimentação do LED. O primeiro deve ser ligado ao aterramento da _protoboard_, o segundo deve ser ligado ao pino **11** da placa Arduino;
 
 ![Conexão do LED junto ao resistor a uma protoboard](conexao-led-resitor.jpg)
 
-4. conecte o potenciômetro à _protoboard_ 
+4. conecte o potenciômetro à _protoboard_;
+4. conecte os furos de aterramento e alimentação da _protoboard_ aos seus respectivos pinos do potenciômetro utilizando _jumpers_;
+4. conecte o pino de sinal do potenciômetro ao pino **A1** utilizando um _jumper_.
 
+![Conexão do potenciômetro à placa Arduino](conexao-led-resitor.jpg)
 
 ### A lógica por trás do projeto
 
