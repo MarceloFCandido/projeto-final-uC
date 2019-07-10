@@ -26,20 +26,39 @@ Para a realização desse trabalho, a dupla utilizou:
 ## Metodologia
 ### Montagem do circuito (passo-a-passo)
 Aqui a dupla descreverá as etapas necessárias para a implementação do circuito:
-1. Conecte o LED à _protoboard_, sabendo que a perna maior se refere à alimentação e a outra se refere ao aterramento;
-1. conecte o resistor ligando a linha da _protoboard_ em que está o aterramento do LED a outra linha qualquer;
-1. conecte dois _jumpers_ à _protoboard_, um à saída do resistor e o outro à alimentação do LED. O primeiro deve ser ligado ao aterramento da _protoboard_, o segundo deve ser ligado ao pino **11** da placa Arduino;
+1. Conecte o LED à _protoboard_, sabendo que a perna maior se refere à alimentação e a outra 
+    se refere ao aterramento;
+1. conecte o resistor ligando a linha da _protoboard_ em que está o aterramento do LED a outra 
+    linha qualquer;
+1. conecte dois _jumpers_ à _protoboard_, um à saída do resistor e o outro à alimentação do LED. 
+    O primeiro deve ser ligado ao aterramento da _protoboard_, o segundo deve ser ligado ao pino 
+    **11** da placa Arduino;
 
-![Conexão do LED junto ao resistor a uma protoboard](conexao-led-resitor.jpg)
+![Conexão do LED junto ao resistor a uma protoboard](images/conexao-led-resitor.jpg)
 
 4. conecte o potenciômetro à _protoboard_;
-4. conecte os furos de aterramento e alimentação da _protoboard_ aos seus respectivos pinos do potenciômetro utilizando _jumpers_;
+4. conecte os furos de aterramento e alimentação da _protoboard_ aos seus respectivos pinos do 
+    potenciômetro utilizando _jumpers_;
 4. conecte o pino de sinal do potenciômetro ao pino **A1** utilizando um _jumper_.
 
-![Conexão do potenciômetro à placa Arduino](conexao-led-resitor.jpg)
+![Conexão do potenciômetro à placa Arduino](images/conexao-pot-arduino.jpg)
 
 ### A lógica por trás do projeto
+O ATMEGA328-P possui um conversor analógico-digital (AD) de dez (10) _bits_. O seu esquema lógico 
+pode ser visto na imagem abaixo. Esse conversor é a parte central da leitura do pino analógico **A1** 
+onde o potenciômetro está conectado. Para a seleção desse pino, os _bits_ `MUX3`, `MUX2`, `MUX1` e `MUX0` 
+do registrador `ADMUX` (_AD Multiplexor Selection_) devem estar de acordo com a seleção do multiplexador 
+do conversor para o dito pino, ou seja, habilitados de acordo com a numeração `0001`.
 
+Uma das formas de se **iniciar uma conversão**, é habilitando-se os _bits_ `ADEN` (_AD Enable_) e `ADSC` 
+(_AD Start Conversion_). Quando a conversão terminar, o _bit_ `ADIF` (_AD Interruption Flag_) do registrador
+`ADCSRA` (_AD Control and Status_) será habilitado, sendo necessário desabilitá-lo para iniciar uma nova 
+conversão. Além disso, o _bit_ `ADSC` será desabilitado. O resultado da conversão poderá ser encontrado 
+nos registradores de dados `ADCL` e `ADCH`, que devem ser lidos nessa ordem se o ajustamento for 
+configurado à direita.
+
+![Esquema lógico do conversor analógico do ATMEGA328-P](images/esquema-conversor-ad.png)
 
 ## Resultados
 
+## Referências
