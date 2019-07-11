@@ -35,14 +35,12 @@ Aqui a dupla descreverá as etapas necessárias para a implementação do circui
     O primeiro deve ser ligado ao aterramento da _protoboard_, o segundo deve ser ligado ao pino 
     **11** da placa Arduino;
 
-![Conexão do LED junto ao resistor a uma protoboard](images/conexao-led-resitor.jpg)
-
 4. conecte o potenciômetro à _protoboard_;
 4. conecte os furos de aterramento e alimentação da _protoboard_ aos seus respectivos pinos do 
     potenciômetro utilizando _jumpers_;
 4. conecte o pino de sinal do potenciômetro ao pino **A1** utilizando um _jumper_.
 
-![Conexão do potenciômetro à placa Arduino](images/conexao-pot-arduino.jpg)
+![Conexão do potenciômetro e do LED à placa Arduino](images/schematic-proteus.jpg)
 
 ### A lógica por trás do projeto
 O ATMEGA328-P possui um conversor analógico-digital (AD) de dez (10) _bits_. O seu esquema lógico 
@@ -98,5 +96,10 @@ delayMicroseconds(adcOutMapped);
 ```
 
 ## Resultados
+Após realizado a montagem do circuito e carregado o código na placa foi observado que ao rotacionar o potenciômetro em um determinado giro, a frequência do LED foi alterada. O valor do duty cycle variava de 0 a 50% do ciclo. Para simular a aplicação desses resultados foi usado o PicSimLab.
+
+![led com baixa frequência](images/led-st1.jpg)
+
+![led com alta frequência](images/led-st2.jpg)
 
 ## Referências
