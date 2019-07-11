@@ -34,8 +34,6 @@ Aqui a dupla descreverá as etapas necessárias para a implementação do circui
     O primeiro deve ser ligado ao aterramento da _protoboard_, o segundo deve ser ligado ao pino 
     **11** da placa Arduino;
 
-![Conexão do LED junto ao resistor a uma protoboard](images/conexao-led-resitor.jpg)
-
 4. conecte o potenciômetro à _protoboard_;
 4. conecte os furos de aterramento e alimentação da _protoboard_ aos seus respectivos pinos do 
     potenciômetro utilizando _jumpers_;
