@@ -59,6 +59,8 @@ configurado à direita.
 
 ![Esquema lógico do conversor analógico do ATMEGA328-P](images/esquema-conversor-ad.png)
 
+
+
 ## Resultados
 
 ## Referências
