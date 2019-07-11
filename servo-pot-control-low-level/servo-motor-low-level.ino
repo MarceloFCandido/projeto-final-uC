@@ -5,23 +5,23 @@
 unsigned int adcOut;
 unsigned int adcOutMapped;
 
-
 void setup() {
-  // declarando porta D9 como SAIDA
+  // declarando porta D11 como SAIDA
   //        76543210
   DDRB |= 0b00001000;
   // declarando porta analogica A0 como entrada
   //        76543210  
-  DDRC |= 0b0000000;
+  DDRC |= 0b00000000;
   // habilitando conversor analogico digital
   // (isso nao inicia uma conversao)
-  //          76543210
+  //           76543210
   ADCSRA |= 0b10000000;
-  // selecionando a entrada A1 no multiplexador do 
+  // selecionando a entrada A0 no multiplexador do 
   // conversor analogico-digital
-  ADMUX |= 0b00000001;
+  ADMUX |= 0b00000000;
 
-  Serial.begin(9600);
+  pinMode(LED, OUTPUT);
+
 }
 
 void loop() {
@@ -34,11 +34,11 @@ void loop() {
 
   adcOut = analogRead(POT);
 
-  adcOutMapped = map(adcOut, 0, 1023, 0, 1000);
+  adcOutMapped = map(adcOut, 0, 1023, 0, 100000);
 
   digitalWrite(LED, HIGH);
   delayMicroseconds(adcOutMapped);
   digitalWrite(LED, LOW);
-  delayMicroseconds(1000 - adcOutMapped);
+  delayMicroseconds(adcOutMapped);
   
 }
