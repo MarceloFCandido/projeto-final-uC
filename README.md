@@ -41,7 +41,7 @@ Aqui a dupla descreverá as etapas necessárias para a implementação do circui
     potenciômetro utilizando _jumpers_;
 4. conecte o pino de sinal do potenciômetro ao pino **A1** utilizando um _jumper_.
 
-![Conexão do potenciômetro à placa Arduino](images/conexao-pot-arduino.jpg)
+![Conexão do potenciômetro e do LED à placa Arduino](images/schematic-proteus.jpg)
 
 ### A lógica por trás do projeto
 O ATMEGA328-P possui um conversor analógico-digital (AD) de dez (10) _bits_. O seu esquema lógico 
