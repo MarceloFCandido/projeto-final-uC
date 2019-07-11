@@ -40,7 +40,7 @@ Aqui a dupla descreverá as etapas necessárias para a implementação do circui
     potenciômetro utilizando _jumpers_;
 4. conecte o pino de sinal do potenciômetro ao pino **A1** utilizando um _jumper_.
 
-![Conexão do potenciômetro e do LED à placa Arduino](images/schematic-proteus.jpg)
+![Conexão do potenciômetro e do LED à placa Arduino](schematic-proteus.jpg)
 
 ### A lógica por trás do projeto
 O ATMEGA328-P possui um conversor analógico-digital (AD) de dez (10) _bits_. O seu esquema lógico 
@@ -95,11 +95,19 @@ digitalWrite(LED, LOW);
 delayMicroseconds(adcOutMapped);
 ```
 
-## Resultados
-Após realizado a montagem do circuito e carregado o código na placa foi observado que ao rotacionar o potenciômetro em um determinado giro, a frequência do LED foi alterada. O valor do duty cycle variava de 0 a 50% do ciclo. Para simular a aplicação desses resultados foi usado o PicSimLab.
+## Resultados e observações
+Após realizado a montagem do circuito e carregado o código na placa foi observado que ao 
+rotacionar o potenciômetro em um determinado giro, a frequência do LED foi alterada. O valor do _duty cycle_ 
+variava de 0% a 50% do ciclo (aferido com osciloscópio). Além disso, observou-se que entre a posições 
+angulares inicial e final do potenciômetro houveram cerca de cinco vezes o reinício da escala de 0% a 50%. 
+Para simular a aplicação desses resultados foi utilizado o PicSimLab, visto que o Proteus parecia não 
+responder corretamente.
 
-![led com baixa frequência](images/led-st1.jpg)
+Ainda não se sabe o motivo da escala ir apenas até 50% da tensão de 5V fornecida pela plataforma Arduíno 
+e nem porque a escala se repetia várias vezes dentro do ângulo do potenciômetro.  
 
-![led com alta frequência](images/led-st2.jpg)
+![led com baixa frequência](led-st1.jpg)
+
+![led com alta frequência](led-st2.jpg)
 
 ## Referências
