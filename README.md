@@ -60,5 +60,10 @@ configurado à direita.
 
 
 ## Resultados
+Após realizado a montagem do circuito e carregado o código na placa foi observado que ao rotacionar o potenciômetro em um determinado giro, a frequência do LED foi alterada. O valor do duty cycle variava de 0 a 50% do ciclo. Para simular a aplicação desses resultados foi usado o PicSimLab.
+
+(images/led-st1.jpg)
+
+(images/led-st3.jpg)
 
 ## Referências
