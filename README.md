@@ -64,6 +64,6 @@ Após realizado a montagem do circuito e carregado o código na placa foi observ
 
 ![led com baixa frequência](images/led-st1.jpg)
 
-![led com alta frequência](images/led-st3.jpg)
+![led com alta frequência](images/led-st2.jpg)
 
 ## Referências
