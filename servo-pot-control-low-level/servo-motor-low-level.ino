@@ -41,9 +41,6 @@ void setPwmFrequency(int pin, int divisor) {
 }
 
 void setup() {
-  // 'setar' o numero de colunas e linhas do LCD
-  // lcd.begin(16, 2);
-  
   // declarando porta D9 como SAIDA
   //        76543210
   DDRB |= 0b00001000;
@@ -51,28 +48,23 @@ void setup() {
   // declarando porta analogica A0 como entrada
   //        76543210  
   DDRC |= 0b0000000;
+  
   // habilitando conversor analogico digital
   // (isso nao inicia uma conversao)
   //          76543210
   ADCSRA |= 0b10000000;
+  
   // selecionando a entrada A0 no multiplexador do 
   // conversor analogico-digital
   ADMUX |= 0b00000000;
 
-//  setPwmFrequency(LED, 8);
+  //  setPwmFrequency(LED, 8);
   pinMode(LED, OUTPUT);
 
   Serial.begin(9600);
 }
 
-void loop() {
-//    iniciando a conversao analogico-digital
-//  ADCSRA |= (1 << ADSC);
-//    esperando o fim da conversao
-//  while((ADCSRA & (1 << ADSC)) && !(ADCSRA & (1 << ADIF)));
-//    armazenando o resultado da conversão
-//  adcOut = ADC;
-  
+void loop() {  
   adcOut = analogRead(POT);
   adcOutMapped = map(adcOut, 0, 1023, 0, 100000);
 
@@ -83,13 +75,6 @@ void loop() {
   Serial.print(adcOutMapped);
   Serial.print('\n');
 
-//  lcd.setCursor(0, 0);
-//  lcd.print(adcOut);
-//  lcd.setCursor(0, 1);
-//  lcd.print(adcOutMapped);
-//  delay(500);
-//  lcd.clear();
-  
   digitalWrite(LED, HIGH);
   delayMicroseconds(adcOutMapped);
   digitalWrite(LED, LOW);
