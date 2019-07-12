@@ -52,6 +52,7 @@ void setup() {
   // habilitando conversor analogico digital
   // (isso nao inicia uma conversao)
   //          76543210
+  ADCSRA |= 0b10000000;
   
   // selecionando a entrada A0 no multiplexador do 
   // conversor analogico-digital

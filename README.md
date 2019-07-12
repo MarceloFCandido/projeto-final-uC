@@ -39,7 +39,7 @@ Aqui a dupla descreverá as etapas necessárias para a implementação do circui
     potenciômetro utilizando _jumpers_;
 4. conecte o pino de sinal do potenciômetro ao pino **A1** utilizando um _jumper_.
 
-![Conexão do potenciômetro e do LED à placa Arduino](schematic-proteus.jpg)
+![Conexão do potenciômetro e do LED à placa Arduino](images/schematic-proteus.jpg)
 
 ### A lógica por trás do projeto
 O ATMEGA328-P possui um conversor analógico-digital (AD) de dez (10) _bits_. O seu esquema lógico 
@@ -57,8 +57,6 @@ configurado à direita.
 
 ![Esquema lógico do conversor analógico do ATMEGA328-P](images/esquema-conversor-ad.png)
 
-
-
 ## Resultados e observações
 Após realizado a montagem do circuito e carregado o código na placa foi observado que ao 
 rotacionar o potenciômetro em um determinado giro, a frequência do LED foi alterada. O valor do _duty cycle_ 
@@ -70,9 +68,9 @@ responder corretamente.
 Ainda não se sabe o motivo da escala ir apenas até 50% da tensão de 5V fornecida pela plataforma Arduíno 
 e nem porque a escala se repetia várias vezes dentro do ângulo do potenciômetro.  
 
-![led com baixa frequência](led-st1.jpg)
+![led com baixa frequência](images/led-st1.jpg)
 
-![led com alta frequência](led-st2.jpg)
+![led com alta frequência](images/led-st2.jpg)
 
 ## Referências
  #### Using servos with an Arduino
